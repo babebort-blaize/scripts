@@ -21,6 +21,10 @@ echo \
 sudo apt-get update -y && sudo apt install docker-ce docker-ce-cli \
     containerd.io docker-compose-plugin httpie -y
 
+sudo snap install --classic certbot
+
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
 docker run -v $HOME/.near:/root/.near -p 3030:3030 -d --name nearup nearup/nearprotocol run localnet
 
 sleep 20
