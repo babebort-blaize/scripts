@@ -37,10 +37,8 @@ export DEBIAN_FRONTEND=noninteractive; \
    echo 'tzdata tzdata/Areas select Etc' | debconf-set-selections; \
    echo 'tzdata tzdata/Zones/Etc select UTC' | debconf-set-selections; \
    apt-get update -qqy && apt-get install -qqy --no-install-recommends \
-   tzdata && apt update -y && apt install -y git binutils-dev 
-libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev \
-   cmake gcc g++  protobuf-compiler libssl-dev pkg-config clang llvm cargo 
-awscli
+   tzdata && apt update -y && apt install -y git binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev \
+   cmake gcc g++  protobuf-compiler libssl-dev pkg-config clang llvm cargo awscli
 
 
 curl https://sh.rustup.rs -sSf | bash -s -- -y
