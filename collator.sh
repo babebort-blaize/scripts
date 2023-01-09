@@ -27,7 +27,7 @@ sudo apt-get update -y && sudo apt install docker-ce docker-ce-cli \
 
 
 docker run -d \
---name astar-container \
+--name collator \
 -u $(id -u `whoami`):$(id -g `whoami`) \
 -p 30333:30333 \
 -p 9933:9933 \
