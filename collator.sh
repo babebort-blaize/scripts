@@ -28,7 +28,7 @@ sudo apt-get update -y && sudo apt install docker-ce docker-ce-cli \
 
 docker run -d \
 --name astar-container \
--u $(id -u astar):$(id -g astar) \
+-u $(id -u `whoami`):$(id -g `whoami`) \
 -p 30333:30333 \
 -p 9933:9933 \
 -p 9944:9944 \
