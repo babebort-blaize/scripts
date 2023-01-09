@@ -3,7 +3,7 @@
 set -x
 set -e
 
-NODE_NAME="BLAIZE-NODE-TEST"
+NODE_NAME="BLAIZE-NODE"
 
 
 sudo apt-get update -y 
