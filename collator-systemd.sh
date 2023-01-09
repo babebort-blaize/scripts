@@ -1,11 +1,11 @@
 #/bin/bash
 
 set -x
-set -e
+#set -e
 
 NODE_NAME="BLAIZE-NODE"
 
-
+useradd --system  astar
 sudo apt-get update -y 
 sudo apt-get install -y \
     ca-certificates \
@@ -17,10 +17,9 @@ wget $(curl -s https://api.github.com/repos/AstarNetwork/Astar/releases/latest |
 
 
 tar -xvf astar-collator*.tar.gz
-
 mv astar-collator /usr/local/bin/astar-collator
 
-echo '[Unit]
+echo "[Unit]
 Description=Astar Collator
 
 [Service]
@@ -40,7 +39,7 @@ Restart=always
 RestartSec=120
 
 [Install]
-WantedBy=multi-user.target' > /etc/systemd/system/astar.service
+WantedBy=multi-user.target" > /etc/systemd/system/astar.service
 
 systemctl enable astar
 systemctl start astar.service
