@@ -42,6 +42,6 @@ RestartSec=120
 [Install]
 WantedBy=multi-user.target' > /etc/systemd/system/astar.service
 
-systemctl enabled astar
+systemctl enable astar
 systemctl start astar.service
 systemctl status astar
